@@ -1,0 +1,35 @@
+extends layout
+
+block content
+    h1= title
+    form#formAddUser(name="adduser",method="post",action="/adduser")
+        input#InputID(type="int", placeholder="ID", name="IDfield")
+        <br>
+        input#InputNimi(type="text", placeholder="Nimi", name="Nimi")
+        <br>
+        input#InputPuh(type="text", placeholder="Puhelin", name="Puh")
+        <br><br>
+        | Kieli
+        <br>
+        input#Inputkieli(type="radio", name="kieli", value="Fi")
+        | Fi
+        <br>
+        input#Inputkieli(type="radio", name="kieli", value="Sv")
+        | Sv
+        <br>
+        input#Inputkieli(type="radio", name="kieli", value="En")
+        | En
+        <!-- </div> -->
+        <br>
+        <br>
+        button#btnSubmit(type="submit") Lisää
+    <br>
+    form#formIDlist(name="IDhaku",method="post",action="/IDlist")
+        input#InputID(type="int", placeholder="ID", name="IDhaku")
+        button#btnSubmit(type="submit") Hae ID:n mukaan
+    <br>
+    form#formkielilist(name="Kielihaku",method="post",action="/kielilist")
+        input#InputKieli(type="text", placeholder="Kieli Fi/Sv/En", name="Kielihaku")
+        button#btnSubmit(type="submit") Listaa kielen mukaan
+    <br>
+    <a href='/userlist'><button>Listaa kaikki tietokannasta</button></a>
